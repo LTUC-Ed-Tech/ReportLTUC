@@ -1,0 +1,17 @@
+{
+    "reports" : [
+        {
+            "cardTitle": "Active students",
+            "cardText": "select Term",
+            "cardScope": "select the term and get the student active on it",
+            "cardColor" : " "
+
+        },
+        {
+            "cardTitle": "Get specific student Information",
+            "cardText": "slect the Lead Id",
+            "cardScope": "Get a pdf report depend on the ID of the Lead" ,
+            "cardColor" : "top"
+        }
+    ]
+}
