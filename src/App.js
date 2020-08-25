@@ -8,7 +8,7 @@ import componentQueries from 'react-component-queries';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './styles/reduction.scss';
 
-const AlertPage = React.lazy(() => import('pages/AlertPage'));
+// const AlertPage = React.lazy(() => import('pages/AlertPage'));
 const AuthModalPage = React.lazy(() => import('pages/AuthModalPage'));
 const BadgePage = React.lazy(() => import('pages/BadgePage'));
 const ButtonGroupPage = React.lazy(() => import('pages/ButtonGroupPage'));
@@ -24,6 +24,8 @@ const ProgressPage = React.lazy(() => import('pages/ProgressPage'));
 const TablePage = React.lazy(() => import('pages/TablePage'));
 const TypographyPage = React.lazy(() => import('pages/TypographyPage'));
 const WidgetPage = React.lazy(() => import('pages/WidgetPage'));
+const studentInfoForm = React.lazy(() => import('pages/reportsForm/studentInfoForm'));
+const activeStudentForm = React.lazy(() => import('pages/reportsForm/activeStudentForm'));
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
@@ -60,9 +62,11 @@ class App extends React.Component {
                 <Route exact path="/cards" component={CardPage} />
                 <Route exact path="/widgets" component={WidgetPage} />
                 <Route exact path="/typography" component={TypographyPage} />
-                <Route exact path="/alerts" component={AlertPage} />
+                {/* <Route exact path="/alerts" component={AlertPage} /> */}
                 <Route exact path="/tables" component={TablePage} />
                 <Route exact path="/badges" component={BadgePage} />
+                <Route exact path='/activeStudent' component={activeStudentForm}/>
+                <Route exact path='/studentInfoForm' component={studentInfoForm}/>
                 <Route
                   exact
                   path="/button-groups"
@@ -77,7 +81,7 @@ class App extends React.Component {
                 {/* <Route exact path=""  component={}/> */}
               </React.Suspense>
             </MainLayout>
-            <Redirect to="/" />
+            <Redirect to="/"/>
           </Switch>
         </GAListener>
       </BrowserRouter>

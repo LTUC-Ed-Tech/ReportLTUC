@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 // import bg11Image from 'assets/img/bg/background_1920-11.jpg';
 // import bg18Image from 'assets/img/bg/background_1920-18.jpg';
 // import bg1Image from 'assets/img/bg/background_640-1.jpg';
@@ -10,6 +11,8 @@ import Page from 'components/Page';
 import React from 'react';
 import dataJson from '../data/reports.json'
 // import { Line } from 'react-chartjs-2';
+import activeStudentForm from "./reportsForm/activeStudentForm.js";
+import studentInfoForm from './reportsForm/studentInfoForm'
 import {
   Button,
   Card,
@@ -24,14 +27,30 @@ import {
   ListGroupItem,
   Row,
 } from 'reactstrap';
+import { NavLink, Switch, Route } from 'react-router-dom';
 
 const CardPage = () => {
+  // const clickOnsubmit = () => {
+  //     if(dataJson.reports[0]){
+  //       // eslint-disable-next-line no-unused-expressions
+  //     }
+  //     else if (dataJson.reports[1]){
+  //       <li>
+  //       <Link to='/studentInfoForm'>{studentInfoForm}</Link>
+  //     </li>
+  //     }
+
+  // }
   return (
     <Page title="Cards" breadcrumbs={[{ name: 'cards', active: true }]}>
+      <Switch>
+        <Route path='/activeStudent' component={activeStudentForm}></Route>
+        <Route path='/studentInfoForm' component={studentInfoForm}></Route>
+      </Switch>
 
       <Row>
         {dataJson.reports.map((item, index) => (
-          <Col key={index} lg={4} md={5} sm={6} xs={12} className="mb-3">
+          <Col key={index} lg={5} md={5} sm={6} xs={12} className="mb-3 ml-10">
             <Card
               inverse
               className={`card-report col-9 border-0  bg-gradient-theme-top`}
@@ -45,10 +64,8 @@ const CardPage = () => {
               </CardBody>
 
               <CardBody className="d-flex justify-content-between align-items-center">
-            <CardText>{item.cardScope}</CardText>
-                <Button outline color="light" className="button-card px-4 m-2">
-                  Try
-                </Button>
+            <CardText>{item.cardScope}</CardText>    
+                <NavLink exact className="cardLink" to={item.linkCard}><Button  outline color="light" className="button-card d-flex px-4 p-2 m-2">try </Button></NavLink>   
               </CardBody>
             </Card>
           </Col>
