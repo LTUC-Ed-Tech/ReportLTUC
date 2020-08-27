@@ -4,7 +4,7 @@
 // to get student Information
 
 import React, { useState, useEffect } from 'react';
-import { Form, Row, Col, Card, CardTitle, CardBody, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, Row, Col, Card, CardTitle, CardBody, FormGroup, Label, Input, Button, Table } from 'reactstrap';
 // import { get } from 'superagent';
 
 const studentInfo = () => {
@@ -26,7 +26,7 @@ const studentInfo = () => {
         })
             .then(response => response.json())
             .then(data => getStudentlist(data))
-        // .catch(error => { console.error("Error !!",error)})
+        .catch(error => { console.error("Error !!",error)})
     }
 
     const handleTermChange = (e) => {
@@ -71,13 +71,35 @@ const studentInfo = () => {
             {
                 studentList.map((item, index) => {
                     return (
-                        <div key={index}>
-                            <p>{item.LeadId}</p>
-                            <p>{item.Name}</p>
-                            <p>{item.Mobile}</p>
-                            <p>{item.Email}</p>
-                            <p>{item.NavigationNationalityId.NationalityDescrip}</p>
-                        </div>
+                        <>
+                        <Table responsive>
+                        <thead>
+                          <tr className="p-0">
+                               <th>Lead ID</th>
+                               <th>Student Name</th>
+                               <th>Mobile Namber</th>
+                               <th>Email</th>
+                               <th>Nationality</th>
+                          </tr>
+                             </thead>
+                             <tbody>
+                             {                         
+                         studentList.map((record , index) => {           
+                             return(
+                                 <tr key={index} className="p-0">
+                                     <td>{item.LeadId}</td>
+                                         <td>{item.Name}</td>
+                                         <td>{item.Mobile}</td>
+                                         <td>{item.Email}</td>
+                                         <td>{item.NavigationNationalityId.NationalityDescrip}</td>
+                                         
+                                 </tr>
+                                 )  
+                             })
+                         }
+                             </tbody>
+                         </Table>
+                         </>
                     )
                 })
 

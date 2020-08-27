@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Row, Col, Table ,Card,CardHeader,CardBody } from 'reactstrap';
+import { Row, Col, Table ,Card,CardHeader, CardBody } from 'reactstrap';
 
 import Page from 'components/Page';
 import { NumberWidget, IconWidget } from 'components/Widget';
@@ -15,38 +15,33 @@ const WidgetPage = () => {
       breadcrumbs={[{ name: 'Pandding', active: true }]}
     >
 
-      <Row>
-          <Col>
+      <Row className="m-0">
+          <Col lg={12} md={12} sm={12} xs={12} className="m-0">
           <Card className="mb-3">
-            <CardHeader>Size</CardHeader>
+            <CardHeader>Users</CardHeader>
             <CardBody>
-              <Table size="sm">
+              <Table responsive size="sm">
                 <thead>
                   <tr>
-                    <th>#</th>
+                    <th>ID</th>
+                    <th>User Name</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Email Adress</th>
+                    <th>Role</th>
+                    <th>promotion</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>Asharor</td>
+                    <td>As-har</td>
+                    <td>Oran</td>
+                    <td>asharashar@g.com</td>
+                    <td><input type="select">
+                      </input></td>
+                      <td><input type="submit" value="confirm"/></td>
                   </tr>
                 </tbody>
               </Table>
