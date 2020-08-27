@@ -28,7 +28,6 @@ import {
 } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import {
-  // UncontrolledTooltip,
   Collapse,
   Nav,
   Navbar,
@@ -82,9 +81,9 @@ const pageContents = [
 
 const navItems = [
   { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
-  { to: '/cards', name: 'reports', exact: false, Icon: MdWeb },
+  { to: '/reports', name: 'reports', exact: false, Icon: MdWeb },
   { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
-  { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
+  { to: '/widgets', name: 'Pandding', exact: false, Icon: MdWidgets },
 ];
 
 const bem = bn.create('sidebar');

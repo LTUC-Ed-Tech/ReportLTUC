@@ -56,6 +56,33 @@
 }
 .m-2{
   display: block;
-  margin: auto !important;
+  margin: 3vw auto 0 auto !important;
   padding: 1% 6%; 
+}
+.table-contaner{
+  width: 80%;
+}
+table{
+  width: fit-content;
+  overflow: scroll;
+  margin: 3vw;
+}
+
+th, td {
+border: 1px solid rgba(0, 0, 0, 0.884);
+padding : 0 .3vw;
+width: fit-content;
+text-align: center;
+}
+td{
+background: rgba(128, 128, 128, 0.219);
+
+}
+.reportTable{
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+.specific-term {
+  margin: auto;
 }

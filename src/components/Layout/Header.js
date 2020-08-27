@@ -81,6 +81,7 @@ class Header extends React.Component {
     return (
       <Navbar light expand className={bem.b('bg-white')}>
         <Nav navbar className="mr-2">
+          
           <Button outline onClick={this.handleSidebarControlButton}>
             <MdClearAll size={25} />
           </Button>
@@ -89,6 +90,8 @@ class Header extends React.Component {
           <SearchInput />
         </Nav>
 
+        {/* <Button>SignUp</Button>
+        <Button>SIGNIn</Button> */}
         <Nav navbar className={bem.e('nav-right')}>
           <NavItem className="d-inline-flex">
             <NavLink id="Popover1" className="position-relative">
@@ -106,6 +109,7 @@ class Header extends React.Component {
                 />
               )}
             </NavLink>
+            
             <Popover
               placement="bottom"
               isOpen={this.state.isOpenNotificationPopover}
@@ -165,6 +169,7 @@ class Header extends React.Component {
             </Popover>
           </NavItem>
         </Nav>
+      
       </Navbar>
     );
   }

@@ -30,19 +30,8 @@ import {
 import { NavLink, Switch, Route } from 'react-router-dom';
 
 const CardPage = () => {
-  // const clickOnsubmit = () => {
-  //     if(dataJson.reports[0]){
-  //       // eslint-disable-next-line no-unused-expressions
-  //     }
-  //     else if (dataJson.reports[1]){
-  //       <li>
-  //       <Link to='/studentInfoForm'>{studentInfoForm}</Link>
-  //     </li>
-  //     }
-
-  // }
   return (
-    <Page title="Cards" breadcrumbs={[{ name: 'cards', active: true }]}>
+    <Page title="Reports" breadcrumbs={[{ name: 'Reports', active: true }]}>
       <Switch>
         <Route path='/activeStudent' component={activeStudentForm}></Route>
         <Route path='/studentInfoForm' component={studentInfoForm}></Route>
